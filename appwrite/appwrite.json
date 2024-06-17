@@ -1,348 +1,918 @@
 {
-    "projectId": "appwriteCms",
-    "projectName": "Appwrite CMS",
+    "projectId": "65633d388115278c6d23",
+    "projectName": "blind-tasting",
+    "databases": [
+        {
+            "$id": "default",
+            "name": "default",
+            "$createdAt": "2023-11-28T17:03:40.480+00:00",
+            "$updatedAt": "2023-11-28T17:03:40.480+00:00",
+            "enabled": true
+        }
+    ],
     "collections": [
         {
-            "$id": "articles",
-            "$createdAt": "2022-12-04T09:18:08.637+00:00",
-            "$updatedAt": "2022-12-04T09:18:08.637+00:00",
+            "$id": "testCases",
             "$permissions": [
-                "read(\"any\")"
+                "create(\"any\")",
+                "read(\"any\")",
+                "update(\"any\")",
+                "delete(\"any\")"
             ],
             "databaseId": "default",
-            "name": "Articles",
+            "name": "testCases",
             "enabled": true,
             "documentSecurity": false,
             "attributes": [
                 {
-                    "key": "title",
+                    "key": "name",
                     "type": "string",
                     "status": "available",
+                    "error": "",
                     "required": true,
                     "array": false,
-                    "size": 255,
+                    "size": 50,
                     "default": null
                 },
                 {
-                    "key": "content",
+                    "key": "eventId",
                     "type": "string",
                     "status": "available",
+                    "error": "",
                     "required": true,
                     "array": false,
-                    "size": 100000,
+                    "size": 36,
                     "default": null
-                },
-                {
-                    "key": "author",
-                    "type": "string",
-                    "status": "available",
-                    "required": true,
-                    "array": false,
-                    "size": 255,
-                    "default": null
-                },
-                {
-                    "key": "status",
-                    "type": "string",
-                    "status": "available",
-                    "required": false,
-                    "array": false,
-                    "size": 255,
-                    "default": "draft"
                 },
                 {
                     "key": "imageId",
                     "type": "string",
                     "status": "available",
+                    "error": "",
                     "required": false,
                     "array": false,
-                    "size": 255,
-                    "default": null
-                }
-            ],
-            "indexes": [
-                {
-                    "key": "status",
-                    "type": "key",
-                    "status": "available",
-                    "attributes": [
-                        "status"
-                    ],
-                    "orders": [
-                        "ASC"
-                    ]
-                }
-            ]
-        },
-        {
-            "$id": "links",
-            "$createdAt": "2022-12-04T09:18:11.121+00:00",
-            "$updatedAt": "2022-12-04T09:18:11.121+00:00",
-            "$permissions": [
-                "read(\"any\")"
-            ],
-            "databaseId": "default",
-            "name": "Links",
-            "enabled": true,
-            "documentSecurity": false,
-            "attributes": [
-                {
-                    "key": "slug",
-                    "type": "string",
-                    "status": "available",
-                    "required": true,
-                    "array": false,
-                    "size": 255,
+                    "size": 36,
                     "default": null
                 },
                 {
-                    "key": "articleId",
+                    "key": "type",
                     "type": "string",
                     "status": "available",
-                    "required": true,
-                    "array": false,
-                    "size": 255,
-                    "default": null
-                }
-            ],
-            "indexes": []
-        },
-        {
-            "$id": "newsletters",
-            "$createdAt": "2022-12-04T09:18:13.420+00:00",
-            "$updatedAt": "2022-12-04T09:18:13.420+00:00",
-            "$permissions": [
-                "create(\"any\")"
-            ],
-            "databaseId": "default",
-            "name": "Newsletters",
-            "enabled": true,
-            "documentSecurity": false,
-            "attributes": [
-                {
-                    "key": "confirmed",
-                    "type": "boolean",
-                    "status": "available",
+                    "error": "",
                     "required": false,
                     "array": false,
+                    "size": 80,
                     "default": null
                 },
                 {
-                    "key": "email",
-                    "type": "string",
+                    "key": "vintage",
+                    "type": "integer",
                     "status": "available",
-                    "required": true,
+                    "error": "",
+                    "required": false,
                     "array": false,
-                    "format": "email",
-                    "default": null
-                }
-            ],
-            "indexes": [
-                {
-                    "key": "unique",
-                    "type": "unique",
-                    "status": "available",
-                    "attributes": [
-                        "email"
-                    ],
-                    "orders": [
-                        "ASC"
-                    ]
-                }
-            ]
-        },
-        {
-            "$id": "settings",
-            "$createdAt": "2022-12-04T09:18:16.146+00:00",
-            "$updatedAt": "2022-12-04T09:18:16.146+00:00",
-            "$permissions": [
-                "read(\"any\")"
-            ],
-            "databaseId": "default",
-            "name": "Settings",
-            "enabled": true,
-            "documentSecurity": false,
-            "attributes": [
-                {
-                    "key": "footerText",
-                    "type": "string",
-                    "status": "available",
-                    "required": true,
-                    "array": false,
-                    "size": 255,
+                    "min": 0,
+                    "max": 2199,
                     "default": null
                 },
                 {
-                    "key": "pageDescription",
+                    "key": "origin",
                     "type": "string",
                     "status": "available",
-                    "required": true,
+                    "error": "",
+                    "required": false,
                     "array": false,
-                    "size": 1023,
+                    "size": 80,
                     "default": null
                 },
                 {
-                    "key": "pageTitle",
+                    "key": "producer",
                     "type": "string",
                     "status": "available",
-                    "required": true,
+                    "error": "",
+                    "required": false,
                     "array": false,
-                    "size": 255,
+                    "size": 80,
                     "default": null
                 },
                 {
-                    "key": "name",
+                    "key": "link",
                     "type": "string",
                     "status": "available",
-                    "required": true,
+                    "error": "",
+                    "required": false,
                     "array": false,
-                    "size": 255,
-                    "default": null
-                }
-            ],
-            "indexes": []
-        },
-        {
-            "$id": "header",
-            "$createdAt": "2022-12-04T09:18:43.478+00:00",
-            "$updatedAt": "2022-12-04T09:18:43.478+00:00",
-            "$permissions": [],
-            "databaseId": "default",
-            "name": "Header",
-            "enabled": true,
-            "documentSecurity": false,
-            "attributes": [
-                {
-                    "key": "name",
-                    "type": "string",
-                    "status": "available",
-                    "required": true,
-                    "array": false,
-                    "size": 255,
+                    "format": "url",
                     "default": null
                 },
                 {
-                    "key": "url",
+                    "key": "createdBy",
                     "type": "string",
                     "status": "available",
+                    "error": "",
                     "required": true,
                     "array": false,
-                    "size": 4095,
+                    "size": 36,
                     "default": null
-                }
-            ],
-            "indexes": []
-        },
-        {
-            "$id": "categories",
-            "$createdAt": "2022-12-04T09:19:51.235+00:00",
-            "$updatedAt": "2022-12-04T09:20:21.518+00:00",
-            "$permissions": [
-                "read(\"any\")"
-            ],
-            "databaseId": "default",
-            "name": "Categories",
-            "enabled": true,
-            "documentSecurity": false,
-            "attributes": [
+                },
                 {
-                    "key": "name",
-                    "type": "string",
+                    "key": "createdAt",
+                    "type": "datetime",
                     "status": "available",
-                    "required": true,
+                    "error": "",
+                    "required": false,
                     "array": false,
-                    "size": 255,
+                    "format": "",
                     "default": null
                 },
                 {
                     "key": "description",
                     "type": "string",
                     "status": "available",
-                    "required": true,
+                    "error": "",
+                    "required": false,
                     "array": false,
-                    "size": 255,
+                    "size": 2000,
                     "default": null
                 },
                 {
-                    "key": "slug",
+                    "key": "fixLinks",
+                    "type": "relationship",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "relatedCollection": "fix_links",
+                    "relationType": "manyToOne",
+                    "twoWay": true,
+                    "twoWayKey": "testCase",
+                    "onDelete": "setNull",
+                    "side": "child"
+                },
+                {
+                    "key": "correctAnswers",
+                    "type": "relationship",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "relatedCollection": "correct_answers",
+                    "relationType": "oneToMany",
+                    "twoWay": false,
+                    "twoWayKey": "testCases",
+                    "onDelete": "cascade",
+                    "side": "parent"
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "$id": "votes",
+            "$permissions": [
+                "create(\"any\")",
+                "read(\"any\")",
+                "update(\"any\")",
+                "delete(\"any\")"
+            ],
+            "databaseId": "default",
+            "name": "votes",
+            "enabled": true,
+            "documentSecurity": false,
+            "attributes": [
+                {
+                    "key": "testCaseId",
                     "type": "string",
                     "status": "available",
+                    "error": "",
                     "required": true,
                     "array": false,
-                    "size": 255,
+                    "size": 36,
+                    "default": null
+                },
+                {
+                    "key": "eventId",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "size": 36,
+                    "default": null
+                },
+                {
+                    "key": "userId",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "size": 36,
+                    "default": null
+                },
+                {
+                    "key": "comment",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "size": 200,
+                    "default": null
+                },
+                {
+                    "key": "rating",
+                    "type": "double",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "min": 1,
+                    "max": 5,
+                    "default": null
+                },
+                {
+                    "key": "index",
+                    "type": "integer",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "min": 1,
+                    "max": 9223372036854776000,
+                    "default": null
+                },
+                {
+                    "key": "gameAnswers",
+                    "type": "relationship",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "relatedCollection": "game_answers",
+                    "relationType": "oneToMany",
+                    "twoWay": false,
+                    "twoWayKey": "votes",
+                    "onDelete": "cascade",
+                    "side": "parent"
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "$id": "fix_links",
+            "$permissions": [
+                "create(\"any\")",
+                "read(\"any\")",
+                "update(\"any\")",
+                "delete(\"any\")"
+            ],
+            "databaseId": "default",
+            "name": "fix_links",
+            "enabled": true,
+            "documentSecurity": false,
+            "attributes": [
+                {
+                    "key": "createdAt",
+                    "type": "datetime",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "format": "",
+                    "default": null
+                },
+                {
+                    "key": "updatedAt",
+                    "type": "datetime",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "format": "",
+                    "default": null
+                },
+                {
+                    "key": "createdBy",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "size": 36,
+                    "default": null
+                },
+                {
+                    "key": "qrEmoji",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "size": 20,
+                    "default": null
+                },
+                {
+                    "key": "testCase",
+                    "type": "relationship",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "relatedCollection": "testCases",
+                    "relationType": "manyToOne",
+                    "twoWay": true,
+                    "twoWayKey": "fixLinks",
+                    "onDelete": "setNull",
+                    "side": "parent"
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "$id": "app_users",
+            "$permissions": [
+                "create(\"any\")",
+                "read(\"any\")",
+                "update(\"any\")",
+                "delete(\"any\")"
+            ],
+            "databaseId": "default",
+            "name": "app_users",
+            "enabled": true,
+            "documentSecurity": false,
+            "attributes": [
+                {
+                    "key": "name",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "size": 50,
+                    "default": null
+                },
+                {
+                    "key": "email",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "format": "email",
+                    "default": null
+                },
+                {
+                    "key": "likeToBeContactedEventIds",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": true,
+                    "size": 36,
+                    "default": null
+                },
+                {
+                    "key": "fullName",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "size": 100,
+                    "default": null
+                },
+                {
+                    "key": "addressLine1",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "size": 200,
+                    "default": null
+                },
+                {
+                    "key": "postalCode",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "size": 20,
+                    "default": null
+                },
+                {
+                    "key": "city",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "size": 50,
                     "default": null
                 }
             ],
             "indexes": []
         },
         {
-            "$id": "articlesCategories",
-            "$createdAt": "2022-12-04T09:21:13.169+00:00",
-            "$updatedAt": "2022-12-04T09:22:28.736+00:00",
+            "$id": "tasting_events",
             "$permissions": [
-                "read(\"any\")"
+                "create(\"any\")",
+                "read(\"any\")",
+                "update(\"any\")",
+                "delete(\"any\")"
             ],
             "databaseId": "default",
-            "name": "Articles - Categories",
+            "name": "tasting_events",
             "enabled": true,
             "documentSecurity": false,
             "attributes": [
                 {
-                    "key": "articleId",
+                    "key": "hostIds",
                     "type": "string",
                     "status": "available",
-                    "required": true,
-                    "array": false,
-                    "size": 255,
+                    "error": "",
+                    "required": false,
+                    "array": true,
+                    "size": 36,
                     "default": null
                 },
                 {
-                    "key": "categoryId",
-                    "type": "string",
+                    "key": "createdAt",
+                    "type": "datetime",
                     "status": "available",
+                    "error": "",
                     "required": true,
                     "array": false,
-                    "size": 255,
+                    "format": "",
+                    "default": null
+                },
+                {
+                    "key": "createdBy",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "size": 36,
+                    "default": null
+                },
+                {
+                    "key": "name",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "size": 30,
+                    "default": null
+                },
+                {
+                    "key": "date",
+                    "type": "datetime",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "format": "",
+                    "default": null
+                },
+                {
+                    "key": "location",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "size": 80,
+                    "default": null
+                },
+                {
+                    "key": "updatedAt",
+                    "type": "datetime",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "format": "",
+                    "default": null
+                },
+                {
+                    "key": "imageId",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "size": 36,
+                    "default": null
+                },
+                {
+                    "key": "appUsers",
+                    "type": "relationship",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "relatedCollection": "app_users",
+                    "relationType": "manyToMany",
+                    "twoWay": false,
+                    "twoWayKey": "tasting_events",
+                    "onDelete": "setNull",
+                    "side": "parent"
+                },
+                {
+                    "key": "finisherUids",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": true,
+                    "size": 36,
+                    "default": null
+                },
+                {
+                    "key": "archiveDate",
+                    "type": "datetime",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "format": "",
+                    "default": null
+                },
+                {
+                    "key": "isPublic",
+                    "type": "boolean",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "default": false
+                },
+                {
+                    "key": "askForContactInfo",
+                    "type": "boolean",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "default": false
+                },
+                {
+                    "key": "gameQuestions",
+                    "type": "relationship",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "relatedCollection": "game_questions",
+                    "relationType": "oneToMany",
+                    "twoWay": true,
+                    "twoWayKey": "tastingEvent",
+                    "onDelete": "cascade",
+                    "side": "parent"
+                },
+                {
+                    "key": "isEmailRequired",
+                    "type": "boolean",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "default": false
+                },
+                {
+                    "key": "isAddressRequired",
+                    "type": "boolean",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "default": false
+                },
+                {
+                    "key": "description",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "size": 800,
                     "default": null
                 }
             ],
             "indexes": [
                 {
-                    "key": "articleId",
-                    "type": "key",
-                    "status": "available",
+                    "key": "hostIds_search_index",
+                    "type": "fulltext",
+                    "status": "deleting",
+                    "error": "",
                     "attributes": [
-                        "articleId"
+                        "hostIds"
                     ],
                     "orders": [
-                        "ASC"
-                    ]
-                },
-                {
-                    "key": "categoryId",
-                    "type": "key",
-                    "status": "available",
-                    "attributes": [
-                        "categoryId"
-                    ],
-                    "orders": [
-                        "ASC"
-                    ]
-                },
-                {
-                    "key": "unique",
-                    "type": "unique",
-                    "status": "available",
-                    "attributes": [
-                        "articleId",
-                        "categoryId"
-                    ],
-                    "orders": [
-                        "ASC",
                         "ASC"
                     ]
                 }
             ]
+        },
+        {
+            "$id": "urls",
+            "$permissions": [],
+            "databaseId": "default",
+            "name": "URLs",
+            "enabled": true,
+            "documentSecurity": false,
+            "attributes": [
+                {
+                    "key": "url",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "format": "url",
+                    "default": null
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "$id": "game_answers",
+            "$permissions": [
+                "create(\"any\")",
+                "read(\"any\")",
+                "update(\"any\")",
+                "delete(\"any\")"
+            ],
+            "databaseId": "default",
+            "name": "game_answers",
+            "enabled": true,
+            "documentSecurity": false,
+            "attributes": [
+                {
+                    "key": "questionId",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "size": 36,
+                    "default": null
+                },
+                {
+                    "key": "rating",
+                    "type": "double",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "min": 1,
+                    "max": 10,
+                    "default": null
+                },
+                {
+                    "key": "recognitionAnswerIndex",
+                    "type": "integer",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "min": 0,
+                    "max": 9223372036854776000,
+                    "default": null
+                },
+                {
+                    "key": "recognitionAnswerText",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "size": 60,
+                    "default": null
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "$id": "game_questions",
+            "$permissions": [
+                "create(\"any\")",
+                "read(\"any\")",
+                "update(\"any\")",
+                "delete(\"any\")"
+            ],
+            "databaseId": "default",
+            "name": "game_questions",
+            "enabled": true,
+            "documentSecurity": false,
+            "attributes": [
+                {
+                    "key": "questionText",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "size": 100,
+                    "default": null
+                },
+                {
+                    "key": "index",
+                    "type": "integer",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "min": 0,
+                    "max": 9223372036854776000,
+                    "default": null
+                },
+                {
+                    "key": "isActive",
+                    "type": "boolean",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "default": true
+                },
+                {
+                    "key": "createdBy",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "size": 36,
+                    "default": null
+                },
+                {
+                    "key": "reconitionOptions",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": true,
+                    "size": 100,
+                    "default": null
+                },
+                {
+                    "key": "tastingEvent",
+                    "type": "relationship",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "relatedCollection": "tasting_events",
+                    "relationType": "oneToMany",
+                    "twoWay": true,
+                    "twoWayKey": "gameQuestions",
+                    "onDelete": "cascade",
+                    "side": "child"
+                },
+                {
+                    "key": "mode",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "elements": [
+                        "recognition",
+                        "rating"
+                    ],
+                    "format": "enum",
+                    "default": null
+                },
+                {
+                    "key": "type",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": false,
+                    "size": 20,
+                    "default": null
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "$id": "correct_answers",
+            "$permissions": [
+                "create(\"any\")",
+                "read(\"any\")",
+                "update(\"any\")",
+                "delete(\"any\")"
+            ],
+            "databaseId": "default",
+            "name": "correct_answers",
+            "enabled": true,
+            "documentSecurity": false,
+            "attributes": [
+                {
+                    "key": "createdBy",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "size": 36,
+                    "default": null
+                },
+                {
+                    "key": "eventId",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "size": 36,
+                    "default": null
+                },
+                {
+                    "key": "caseId",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "size": 36,
+                    "default": null
+                },
+                {
+                    "key": "questionId",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "size": 36,
+                    "default": null
+                },
+                {
+                    "key": "customRecognitionOptions",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": false,
+                    "array": true,
+                    "size": 50,
+                    "default": null
+                },
+                {
+                    "key": "correctAnswerText",
+                    "type": "string",
+                    "status": "available",
+                    "error": "",
+                    "required": true,
+                    "array": false,
+                    "size": 60,
+                    "default": null
+                }
+            ],
+            "indexes": []
+        }
+    ],
+    "functions": [
+        {
+            "$id": "delete_votes",
+            "name": "delete_votes",
+            "runtime": "dart-3.1",
+            "execute": [],
+            "events": [],
+            "schedule": "",
+            "timeout": 15,
+            "enabled": true,
+            "logging": true,
+            "entrypoint": "lib/main.dart",
+            "commands": "dart pub get",
+            "ignore": [
+                ".packages",
+                ".dart_tool"
+            ],
+            "path": "functions/delete_votes"
+        },
+        {
+            "$id": "delete_app_user",
+            "name": "delete_app_user",
+            "runtime": "dart-3.1",
+            "execute": [],
+            "events": [],
+            "schedule": "",
+            "timeout": 15,
+            "enabled": true,
+            "logging": true,
+            "entrypoint": "lib/main.dart",
+            "commands": "dart pub get",
+            "ignore": [
+                ".packages",
+                ".dart_tool"
+            ],
+            "path": "functions/delete_app_user"
         }
     ]
 }
